@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="icon" href="/public/logo.jpeg" class="logo">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <section class="navbar">
+            <button id="toggle">☰</button>
+
+            <div id="overlay"></div>
+
+
+            <!-- Changes 14 april -->
+
+            <div class="sidebar" id="sidebar1">
+
+                <a href="index.html"><img src="/public/logo.png" alt="Logo" id="logo"></a>
+                <button id="closeSidebar"><b>✕</b></button>
+
+
+                <p id="nav-gap"></p>
+
+                <ul>
+                    <li><button class="nav-btn"><a href="index.html">Home</a></button></li>
+                    <li><button class="nav-btn"><a href="chatbot.html">Chat-Bot</a></button></li>
+                    <li><button class="nav-btn"><a href="summarize.html">Summarizer</a></button></li>
+                    <li><button class="nav-btn"><a href="focus-mode.html">Focus-Mode</a></button></li>
+                    <li><button class="nav-btn"><a href="flashcards.html">Flashcards</a></button></li>
+                    <li><button class="nav-btn"><a href="aboutus.html">About Us</a></button></li>
+
+                </ul>
+            </div>
+        </section>
+        <div class="head">
+            <a href="index.html"><img src="/public/logo.png" alt="Logo"></a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Contact Us</h1><br>
+        <p>We are here to assist you. Reach out to us for support, inquiries, or feedback.<br> Our team is committed to providing timely and effective solutions.</p>
+    </div>
+    <div class="main">
+        <div class="left">
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <strong>Email Support</strong>
+                <span>support@AIVION.com</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-headset"></i>
+                <strong>General Inquiry</strong>
+                <span>info@AIVION.com</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <strong>Business</strong>
+                <span>business@AIVION.com</span>
+            </div>
+
+            <div class="info-item">
+
+                <i class="fa-brands fa-twitter"></i>
+
+                <strong>Twitter</strong>
+                <span>@AIVION</span>
+            </div>
+
+            <div class="info-item">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <strong>Instagram</strong>
+                <span>@AIVION_official</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/AIVION</span>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <div class="feedback-card">
+                <h3>Give Us Feedback</h3>
+
+                <form>
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Feedback"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="footer"></div>
+    <script src="/js/index.js"></script>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+    <script src="/js/contact.js"></script>
+
+</body>
+
+</html>

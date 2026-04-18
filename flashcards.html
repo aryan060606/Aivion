@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="icon" href="public/logo.jpeg" class="logo">
+    <link rel="stylesheet" href="/css/flashcards.css">
+</head>
+
+<body>
+    <header>
+        <section class="navbar">
+            <button id="toggle">☰</button>
+
+            <div id="overlay"></div>
+
+
+            <!-- Changes 14 april -->
+
+            <div class="sidebar" id="sidebar1">
+
+                <a href="index.html"><img src="/public/logo.png" alt="Logo" id="logo"></a>
+                <button id="closeSidebar"><b>✕</b></button>
+
+
+                <p id="nav-gap"></p>
+
+                <ul>
+                    <li><button class="nav-btn"><a href="index.html">Home</a></button></li>
+                    <li><button class="nav-btn"><a href="chatbot.html">Chat-Bot</a></button></li>
+                    <li><button class="nav-btn"><a href="summarize.html">Summarizer</a></button></li>
+                    <li><button class="nav-btn"><a href="focus-mode.html">Focus-Mode</a></button></li>
+                </ul>
+            </div>
+        </section>
+        <div class="head">
+            <a href="index.html"><img src="/public/logo.png" alt="Logo"></a>
+        </div>
+    </header>
+    <main>
+
+        <main class="main">
+
+            <div class="hero">
+                <h1>Flashcards Generator</h1>
+                <p>Turn your notes into smart flashcards instantly</p>
+            </div>
+
+            <div class="input-box">
+                <textarea id="inputText" placeholder="Paste your notes or topic..."></textarea>
+                <button id="generateBtn">Generate Flashcards</button>
+            </div>
+
+            <div id="cardsContainer" class="cards-grid"></div>
+
+        </main>
+
+        <script src="/js/flashcards.js"></script>
+        <script src="/js/index.js"></script>
+
+        <div id="footer"></div>
+        <script>
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+</body>
+
+</html>

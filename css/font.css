@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'font1';
+    /* This is the name YOU invent */
+    src: url('/public/font/Quantix-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+h2,
+p,
+a {
+    font-family: 'font1', sans-serif;
+}

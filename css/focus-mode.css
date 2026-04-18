@@ -1,0 +1,376 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================= BODY ================= */
+
+body {
+    min-height: 100vh;
+    color: #E0E7FF;
+    overflow-x: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/lofi.jpg') no-repeat center/cover;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+    min-height: calc(70vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ================= TITLE ================= */
+
+.title {
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #b3b3b3;
+}
+
+.subtitle {
+    margin: 10px 0 30px;
+    color: #CBD5F5;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+
+/* ================= TIMER ================= */
+
+.timer-box {
+    position: relative;
+    text-align: center;
+}
+
+
+/* 🌠 PARTICLE GLOW BEHIND TIMER */
+
+.timer-box::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.15), transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* ================= CIRCLE ================= */
+
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+svg {
+    transform: rotate(-90deg);
+    margin: -25px;
+}
+
+.bg {
+    stroke: rgba(255, 255, 255, 0.15);
+}
+
+.progress {
+    stroke: #00E5FF;
+    stroke-linecap: round;
+    stroke-dasharray: 565;
+    filter: drop-shadow(0 0 10px #00E5FF);
+}
+
+
+/* ================= TIME ================= */
+
+.time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+
+/* ================= BUTTONS ================= */
+
+.buttons button {
+    margin: 5px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #00E5FF, #7C3AED);
+    color: white;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00E5FF;
+}
+
+
+/* ================= LOFI ================= */
+
+.lofi button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #94A3B8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/* 🎧 LOFI PULSE EFFECT */
+
+.lofi button.active {
+    color: #00E5FF;
+    text-shadow: 0 0 10px #00E5FF;
+    animation: lofiPulse 2s infinite ease-in-out;
+}
+
+@keyframes lofiPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* ================= VOLUME ================= */
+
+.volume {
+    margin-top: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: #00E5FF;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    color: #94A3B8;
+    background: transparent;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 26px;
+    }
+
+    .circle {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.85);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+
+    a {
+        text-decoration: none;
+        color: white
+    }
+}
+
+
+
+#toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    font-size: larger;
+    background: rgba(0, 0, 0, 0.4);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1002;
+}
+
+#closeSidebar {
+    opacity: 1;
+    pointer-events: all;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        margin: 15px 0;
+    }
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#closeSidebar {
+    border: none;
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 200px;
+}
+
+.nav-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    text-align: start;
+}
+
+.nav-btn:hover {
+    background: #ffffff;
+
+    a {
+        text-decoration: none;
+        color: rgb(0, 0, 0)
+    }
+
+    transform: scale(1.15);
+}
+
+#logo {
+    width: 40px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.head a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.head {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: var(--space-md);
+
+
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+
+
+}
+
+.head h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+
+/* header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    padding-bottom: 40px;
+
+} */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.head img {
+    width: 50px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+}

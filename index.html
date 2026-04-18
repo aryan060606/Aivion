@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aivion</title>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="icon" href="/public/logo.jpeg" class="logo">
+    <link rel="stylesheet" href="/css/index.css">
+    <meta property="og:title" content="Aivion, AI study companion">
+    <meta property="og:description" content="AI Study Assistant">
+    <meta property="og:url" content="https://aivion.fs0ciety.in/">
+    <meta property="og:type" content="website">
+    <meta name="description" content="AI Study Assistant">
+    <meta name="author" content="Fs0coiety">
+    <link rel="icon" href="/public/logo.jpeg" type="image/png">
+</head>
+
+<body>
+    <header>
+        <section class="navbar">
+            <button id="toggle">☰</button>
+
+            <div id="overlay"></div>
+
+
+            <!-- Changes 14 april -->
+
+            <div class="sidebar" id="sidebar1">
+
+                <a href="index.html"><img src="/public/logo.png" alt="Logo" id="logo"></a>
+                <button id="closeSidebar"><b>✕</b></button>
+
+
+                <p id="nav-gap"></p>
+
+                <ul>
+                    <li><button class="nav-btn"><a href="chatbot.html">Chat-Bot</a></button></li>
+                    <li><button class="nav-btn"><a href="summarize.html">Summarizer</a></button></li>
+                    <li><button class="nav-btn"><a href="flashcards.html">Flashcards</a></button></li>
+                    <li><button class="nav-btn"><a href="focus-mode.html">Focus-Mode</a></button></li>
+                    <li><button class="nav-btn"><a href="aboutus.html">About Us</a></button></li>
+                    <li><button class="nav-btn"><a href="contact.html">Contact Us</a></button></li>
+
+                </ul>
+            </div>
+        </section>
+        <div class="head">
+            <a href="index.html">
+                <h2>AiVion</h2>
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="hero_container">
+
+            <div class="hero_content">
+
+                <h1 class="hero_title">
+                    Your Study Partner
+                </h1>
+
+                <p class="hero_subtitle">
+                    Ask questions, generate mind maps, summarize notes, It is all powered by AI to boost your learning
+                </p>
+
+                <div class="hero_actions">
+                    <a href="chatbot.html" class="btn_primary" aria-label="Start chat with Ai">Start chat </a>
+                    <a href="summarize.html" class="btn_secondary" aria-label="Summarize notes">Summarize Notes</a>
+                </div>
+
+
+            </div>
+
+            <div class="login_box">
+                <div class="login_input">
+                    <h3 class="login_space"> Sign In</h3>
+                    <p class="email_space">Email</p>
+                    <input type="email" placeholder="Enter your email" aria-label="Email input for updates" class="email">
+                    <p class="password_space">Password</p>
+                    <input type="password" placeholder="Enter your password" aria-label="Password input for updates" class="password">
+                    <button class="login_button" aria-label="Login to your account">Login</button>
+                    <a href="signup.html" class="signup_link" aria-label="Sign up link">Don't have an account? Sign
+                        up</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="features_container">
+            <h2 class="section_title"> Powerfull Features For Students
+            </h2>
+
+            <div class="features_grid">
+
+                <div class="feature-card">
+                    <h3> AI Chat Assistant</h3>
+                    <!-- Added emoji for  attractive look -->
+                    <p>Get instant answers to your academic questions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3> Quiz Generator</h3>
+                    <!-- Added emoji for  attractive look -->
+                    <p> Best for generating various question types in one click.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3> Notes Summarizer</h3>
+                    <!-- Added emoji for  attractive look -->
+                    <p>Convert long notes into short and clear key points.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="/js/index.js"></script>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+</body>
+
+</html>
